@@ -27,7 +27,51 @@
     <main>
         <section id="about" class="about-section">
             <h2>About Me</h2>
-            <p>XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX</p>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <h3>2020</h3>
+                    <p>Started learning web development!</p>
+                </div>
+                <div class="timeline-item">
+                    <h3>2021</h3>
+                    <p>Landed my first freelance project.</p>
+                </div>
+                <div class="timeline-item">
+                    <h3>2022</h3>
+                    <p>Joined a startup as a front-end developer.</p>
+                </div>
+            </div>
+
+            <h2>Skills</h2>
+            <div class="skills">
+                <div class="skill">
+                    <p>HTML</p>
+                    <div class="progress">
+                        <div class="progress-bar" style="width: 90%;">90%</div>
+                    </div>
+                </div>
+                <div class="skill">
+                    <p>CSS</p>
+                    <div class="progress">
+                        <div class="progress-bar" style="width: 80%;">80%</div>
+                    </div>
+                </div>
+                <div class="skill">
+                    <p>JavaScript</p>
+                    <div class="progress">
+                        <div class="progress-bar" style="width: 85%;">85%</div>
+                    </div>
+                </div>
+            </div>
+
+            <h2>Fun Facts About Me</h2>
+            <div id="fun-facts">
+                <p>I once tried coding on my phone... didn't go well.</p>
+            </div>
+
+            <h2>What Type of Developer Are You?</h2>
+            <button onclick="revealAnswer()">Click to find out</button>
+            <p id="quiz-result"></p>          
         </section>
 
         <section id="projects" class="projects-section">
