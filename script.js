@@ -1,40 +1,91 @@
-let page = 1;
-let isLoading = false;
+// Project modal handling
+const projectItems = document.querySelectorAll('.project-item');
+const projectModal = document.getElementById('projectModal');
+const modalTitle = document.getElementById('modal-title');
+const modalDescription = document.getElementById('modal-description');
+const modalImages = document.getElementById('modal-images');  // If you need to add images
+const closeProjectModal = document.querySelector('.close-project-modal');
 
-function loadPortfolioItems() {
-    if (isLoading) return;
+// Event listener for each project item to open modal
+projectItems.forEach(item => {
+    item.addEventListener('click', () => {
+        // Get title, description, and images from data attributes
+        const title = item.getAttribute('data-title');
+        const description = item.getAttribute('data-description');
+        const images = item.getAttribute('data-images').split(',');  // Split image list if needed
 
-    isLoading = true;
-    
-    setTimeout(() => {
-        const content = document.getElementById('content');
+        // Set modal content
+        modalTitle.textContent = title;
+        modalDescription.textContent = description;
 
-        for (let i = 0; i < 5; i++) {
-            const item = document.createElement('div');
-            item.className = 'portfolio-item';
-            item.innerHTML = `
-                <h2>Project ${page * 5 + i}</h2>
-                <p>Description of project ${page * 5 + i} goes here.</p>
-            `;
-            content.appendChild(item);
-        }
+        // Clear previous images
+        modalImages.innerHTML = '';
 
-        page++;
-        isLoading = false;
-    }, 1000);
-}
+        // Add images if available
+        images.forEach(image => {
+            const imgElement = document.createElement('img');
+            imgElement.src = image;
+            imgElement.style.maxWidth = '100%';
+            imgElement.style.borderRadius = '8px';
+            modalImages.appendChild(imgElement);
+        });
 
-function onScroll() {
-    if (window.innerHeight + window.scrollY >= document.body.offsetHeight - 50) {
-        loadPortfolioItems();
+        // Show the project modal
+        projectModal.style.display = 'flex';
+    });
+});
+
+// Close modal when the close button is clicked
+closeProjectModal.addEventListener('click', () => {
+    projectModal.style.display = 'none';
+});
+
+// Close modal when clicking outside of the modal
+window.addEventListener('click', (e) => {
+    if (e.target === projectModal) {
+        projectModal.style.display = 'none';
     }
-}
+});
 
-window.addEventListener('scroll', onScroll);
+// Reflection modal handling
+const milestones = document.querySelectorAll('.timeline-milestone');
+const reflectionModal = document.getElementById('reflectionModal');
+const reflectionTitle = document.getElementById('modal-reflection-title');
+const reflectionDescription = document.getElementById('modal-reflection-description');
+const reflectionImage = document.getElementById('modal-reflection-image');
+const closeReflectionModal = document.querySelector('.close-reflection-modal');
 
-// Load the first set of items
-loadPortfolioItems();
+// Event listener for each milestone to open reflection modal
+milestones.forEach(milestone => {
+    milestone.addEventListener('click', () => {
+        // Get title, description, and image from data attributes
+        const title = milestone.getAttribute('data-title');
+        const description = milestone.getAttribute('data-description');
+        const image = milestone.getAttribute('data-image');
 
+        // Set modal content
+        reflectionTitle.textContent = title;
+        reflectionDescription.textContent = description;
+        reflectionImage.src = image;
+
+        // Show the reflection modal
+        reflectionModal.style.display = 'flex';
+    });
+});
+
+// Close reflection modal when the close button is clicked
+closeReflectionModal.addEventListener('click', () => {
+    reflectionModal.style.display = 'none';
+});
+
+// Close modal when clicking outside of the modal
+window.addEventListener('click', (e) => {
+    if (e.target === reflectionModal) {
+        reflectionModal.style.display = 'none';
+    }
+});
+
+// Fun facts and quiz logic
 const facts = [
     "I once tried coding on my phone... didn't go well.",
     "I can write clean code but can't keep my desk clean!",
@@ -57,3 +108,4 @@ function revealAnswer() {
     const randomAnswer = answers[Math.floor(Math.random() * answers.length)];
     document.getElementById('quiz-result').textContent = randomAnswer;
 }
+

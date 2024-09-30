@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Portfolio</title>
+    <title>Marilyn Shao Portfolio</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -12,36 +12,50 @@
         <a class="active" href="#home">Home</a>
         <a href="#about">About</a>
         <a href="#projects">Projects</a>
+        <a href="#process">Foodies Milestones</a>
+        <a href="#reflection">Reflection</a>
         <a href="#contact">Contact</a>
     </div>
 
-    <div class="banner-content">
+    <div id="home" class="banner-content">
         <h1>Welcome to My Portfolio</h1>
-        <p>A showcase of my work and skills.</p>
+        <p>A little bit of Marilyn Shao</p>
         <div class="buttons">
-            <a href="#projects" class="btn">View Projects</a>
-            <a href="#contact" class="btn">Contact Me</a>
+            <a href="#projects" class="btn">Explore my projects</a>
         </div>
     </div>
 
     <main>
         <section id="about" class="about-section">
-            <h2>About Me</h2>
+            <h2>Education & Career Milestones</h2>
             <div class="timeline">
                 <div class="timeline-item">
-                    <h3>2020</h3>
-                    <p>Started learning web development!</p>
+                    <h3>2013-2016</h3>
+                    <p>The University of Queensland - Bachelor of Arts - Korean and Japanese</p>
                 </div>
                 <div class="timeline-item">
-                    <h3>2021</h3>
-                    <p>Landed my first freelance project.</p>
+                    <h3>2013-2021</h3>
+                    <p>Self-employed - Managing Director/Onsite Manager - Real Estate</p>
                 </div>
                 <div class="timeline-item">
-                    <h3>2022</h3>
-                    <p>Joined a startup as a front-end developer.</p>
+                    <h3>2021-2023</h3>
+                    <p>JLL - Senior Property Manager - Real Estate</p>
+                </div>
+                <div class="timeline-item">
+                    <h3>2023-2025</h3>
+                    <p>The University of Queensland - Master of Information Technology</p>
                 </div>
             </div>
-
+            <div class="fun-facts-container">
+                <h2>Fun Facts About Me</h2>
+                <div id="fun-facts">
+                    <p>I once tried coding on my phone... didn't go well.</p>
+                </div>
+            
+                <h2>What Type of Developer Are You?</h2>
+                <button onclick="revealAnswer()">Click to find out</button>
+                <p id="quiz-result"></p>
+            </div>
             <h2>Skills</h2>
             <div class="skills">
                 <div class="skill">
@@ -62,39 +76,146 @@
                         <div class="progress-bar" style="width: 85%;">85%</div>
                     </div>
                 </div>
-            </div>
-
-            <h2>Fun Facts About Me</h2>
-            <div id="fun-facts">
-                <p>I once tried coding on my phone... didn't go well.</p>
-            </div>
-
-            <h2>What Type of Developer Are You?</h2>
-            <button onclick="revealAnswer()">Click to find out</button>
-            <p id="quiz-result"></p>          
+                <div class="skill">
+                    <p>PHP</p>
+                    <div class="progress">
+                        <div class="progress-bar" style="width: 60%;">60%</div>
+                    </div>
+                </div>
+                <div class="skill">
+                    <p>Python</p>
+                    <div class="progress">
+                        <div class="progress-bar" style="width: 70%;">70%</div>
+                    </div>
+                </div>
+                <div class="skill">
+                    <p>Java</p>
+                    <div class="progress">
+                        <div class="progress-bar" style="width: 70%;">70%</div>
+                    </div>
+                </div>
+                <div class="skill">
+                    <p>MySQL</p>
+                    <div class="progress">
+                        <div class="progress-bar" style="width: 65%;">65%</div>
+                    </div>
+                </div>
+            </div>         
         </section>
 
         <section id="projects" class="projects-section">
             <h2>My Projects</h2>
             <div class="projects-grid">
-                <div class="project-item"></div>
-                <div class="project-item"></div>
-                <div class="project-item"></div>
-                <div class="project-item"></div>
-                <div class="project-item"></div>
-                <div class="project-item"></div>
-                <div class="project-item"></div>
+                <div class="project-item" data-title="Foodies" data-description="The Foodies website aims to be the ultimate resource for 
+                    food truck and local market enthusiasts in Brisbane. The platform will provide users with an interactive map to discover 
+                    current and upcoming food trucks and markets, a calendar view with detailed event information, and options to book private 
+                    events with their favorite food trucks. By leveraging various APIs from Brisbane City Council, the site will offer real-time, 
+                    accurate data, enhancing the user experience and fostering engagement with local food vendors." 
+                    data-images="portfolio1.jpg,portfolio2.jpg">
+                    <h3>Foodies</h3>
+                </div>
+                <div class="project-item" data-title="Portfolio" data-description="A personal portfolio showcasing my projects and skills using HTML, CSS, and JavaScript." data-images="portfolio1.jpg,portfolio2.jpg">
+                    <h3>Portfolio</h3>
+                </div>
+                <div class="project-item" data-title="Brissie Catch" data-description="Brissie Catch is a web application designed to 
+                    encourage families and urban residents to explore and engage with local parks. Users can find different tracks in local 
+                    parks and while exploring through the chosen track, catch virtual characters called Brissie 
+                    at designated locations such as drinking fountains and barbeque spots. Each catch adds points to the 
+                    user's account together with the points for completing the tracks, fostering a sense of achievement and promoting more visits to these public areas." 
+                    data-images="brissiecatch.png">
+                    <h3>Brissie Catch</h3>
+                </div>
+            </div>
+        </section>
+
+        <!-- Project Modal Structure -->
+        <div id="projectModal" class="modal">
+            <div class="modal-content">
+                <span class="close-project-modal">&times;</span>
+                <h2 id="modal-title">Project Title</h2>
+                <p id="modal-description">Project description</p>
+                <div id="modal-images"></div>
+            </div>
+        </div>
+
+        <section id="process" class="process-section">
+            <h2>Foodies Milestones</h2>
+            <div class="timeline-process">
+                <div class="timeline-item">
+                    <h3>Early Ideation</h3>
+                    <p>This phase involved brainstorming, creating hand-drawn sketches, and generating initial concepts.</p>
+                    <img src="Sketch_Image_1.png" alt="Wireframe Image">
+                    <p>Annotation: This sketch (see Image 1) was our initial idea for the Foodies project.</p>
+                </div>
+                <div class="timeline-item">
+                    <h3>Research & Inspiration</h3>
+                    <p>I explored several references and examples of similar projects to draw inspiration for the design.</p>
+                    <img src="Research_Image.png" alt="Research Image">
+                    <p>Annotation: Here’s a reference I explored from a similar project, which influenced the design choices.</p>
+                </div>
+                <div class="timeline-item">
+                    <h3>Prototyping</h3>
+                    <p>In this stage, I began creating digital mockups using Figma and early code snippets to test the feasibility of the designs.</p>
+                    <img src="Prototype_Image.png" alt="Prototype Image">
+                    <p>Annotation: This mid-fidelity prototype (see Image 3) shows second stage of our design reflecting users' feedbacks received.</p>
+                    <img src="Prototype_Image_2.png" alt="Prototype Image">
+                    <p>Annotation: This is our prototype website (see Image 4) shows our MVP features.</p>
+                </div>
+                <div class="timeline-item">
+                    <h3>Refinement</h3>
+                    <p>As the project progressed, I refined designs and improved user flows based on team feedback and testing results.</p>
+                    <img src="Final_Design_Image.png" alt="Final Design Image">
+                    <p>Annotation: After multiple iterations, the design was refined into this final version (see Image 5).</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="reflection" class="reflection-section">
+            <h2>Interactive Reflection</h2>
+            <div class="reflection-timeline">
+                <div class="timeline-milestone" data-title="Early Challenges" data-description="Facilitating team discussions and getting everyone on the same page." data-image="early_challenges.png">
+                    <span>Early Challenges</span>
+                </div>
+                <div class="timeline-milestone" data-title="Key Contributions" data-description="Implemented key features like interactive maps and user feedback forms." data-image="key_contributions.png">
+                    <span>Key Contributions</span>
+                </div>
+                <div class="timeline-milestone" data-title="Leadership Moments" data-description="Led the team through difficult phases by coordinating feedback and refining the project plan." data-image="leadership_moments.png">
+                    <span>Leadership Moments</span>
+                </div>
+                <div class="timeline-milestone" data-title="Final Reflection" data-description="What I learned and how this project shaped my growth as a developer and team leader." data-image="final_reflection.png">
+                    <span>Final Reflection</span>
+                </div>
+            </div>
+        
+            <!-- Reflection Modal Structure -->
+            <div id="reflectionModal" class="modal">
+                <div class="modal-content">
+                    <span class="close-reflection-modal">&times;</span> 
+                    <h2 id="modal-reflection-title">Reflection Title</h2>
+                    <p id="modal-reflection-description">Reflection description goes here...</p>
+                    <img id="modal-reflection-image" src="" alt="Reflection Image" style="max-width:100%; border-radius: 8px;">
+                </div>
             </div>
         </section>
 
         <section id="contact" class="contact-section">
             <h2>Contact Me</h2>
-            <p>XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX</p>
+            <p>Feel free to get in touch with me for any project collaborations!</p>
+            <div class="social-icons">
+                <a href="https://www.linkedin.com/in/marilyn-shao-050391116" target="_blank" class="linkedin-icon" aria-label="LinkedIn">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#0077b5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-linkedin">
+                        <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2h-1a2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                        <rect x="2" y="9" width="4" height="12"></rect>
+                        <circle cx="4" cy="4" r="2"></circle>
+                    </svg>
+                </a>
+            </div>
         </section>
     </main>
 
+
     <footer>
-        <p>&copy; 2024 My Portfolio</p>
+        <p>&copy; 2024 Marilyn Shao</p>
     </footer>
 
     <script src="script.js"></script>
