@@ -192,7 +192,7 @@ body {
 /* Skills Section */
 .skills {
     margin-top: 50px;
-    margin-bottom: 50px;
+    margin-bottom: 70px;
 }
 
 .skill {
@@ -214,6 +214,13 @@ body {
     color: #D4AF37;
     line-height: 25px;
     border-radius: 5px 0 0 5px;
+    width: 0; /* Start with width 0 for the animation */
+    transition: width 2s ease; /* Animation effect */
+}
+
+/* Trigger the animation when the class 'animate' is added */
+.progress-bar.animate {
+    width: var(--skill-level);
 }
 
 /* Fun Facts and Quiz */
@@ -256,6 +263,8 @@ button {
 .projects-section {
     padding: 80px 20px;
     background-color: #F5F1E3;
+    background: radial-gradient(circle, #94A6A1 10%, transparent 10%) repeat;
+    background-size: 30px 30px;
     text-align: center;
 }
 

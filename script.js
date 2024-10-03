@@ -109,3 +109,28 @@ function revealAnswer() {
     document.getElementById('quiz-result').textContent = randomAnswer;
 }
 
+document.addEventListener("DOMContentLoaded", () => {
+    const progressBars = document.querySelectorAll(".progress-bar");
+
+    const revealSkills = () => {
+        progressBars.forEach(bar => {
+            const skillLevel = bar.getAttribute("data-skill");
+            bar.style.setProperty("--skill-level", skillLevel); // Dynamically set the width
+            bar.classList.add("animate");
+        });
+    };
+
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                revealSkills(); // Trigger the animation when the skills section is in view
+                observer.disconnect(); // Stop observing after animation
+            }
+        });
+    }, { threshold: 0.5 }); // When 50% of the section is in view
+
+    const skillsSection = document.querySelector(".skills");
+    observer.observe(skillsSection);
+});
+
+
