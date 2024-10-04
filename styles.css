@@ -1,3 +1,11 @@
+/* Consistent Spacing Variables */
+:root {
+    --section-padding: 50px 20px;
+    --section-margin: 60px auto;
+    --container-max-width: 1200px;
+    --element-margin: 40px 0;
+}
+
 body {
     font-family: "Open Sans", sans-serif;
     margin: 0;
@@ -5,6 +13,44 @@ body {
     background-color: #F5F1E3;
     color: #3D3D3D;
 }
+
+/* For clickable titles */
+.clickable-title {
+    cursor: pointer;
+    color: #1F2D3D;
+    text-align: center;
+    position: relative;
+    transition: color 0.3s ease;
+    display: inline-block;
+
+}
+
+.clickable-title:hover {
+    color: #327562;
+    text-decoration: underline;
+}
+
+.clickable-title::after {
+    content: '▼'; 
+    position: absolute;
+    right: -30px;
+    font-size: 0.8em;
+    top: 7px;
+    transition: transform 0.3s ease;
+}
+
+.clickable-title.active::after {
+    transform: rotate(180deg);
+}
+
+/* Divider between sections */
+.section-divider {
+    margin: 40px auto;
+    border-bottom: 3px solid #A0896C; 
+    width: 80%; 
+    max-width: 800px; 
+}
+
 /* Top Navigation */
 .topnav {
     overflow: hidden;
@@ -12,7 +58,7 @@ body {
     display: flex;
     justify-content: center;
     position: sticky;
-    top: 0;
+    top: 0px;
     z-index: 1000;
     padding: 10px 0;
 }
@@ -46,7 +92,8 @@ body {
     background: linear-gradient(135deg, #1F2D3D, #327562);
     background-size: 400% 400%;
     animation: gradientAnimation 10s ease infinite;
-    background-attachment: fixed; /* Parallax scrolling effect */
+    background-attachment: fixed;
+    padding: var(--section-padding);
 }
 
 @keyframes gradientAnimation {
@@ -62,7 +109,7 @@ body {
     animation: textAnimation 2s ease-out;
     white-space: nowrap;
     overflow: hidden;
-    border-right: .15em solid #D4AF37; /* Typing animation effect */
+    border-right: .15em solid #D4AF37;
     animation: typing 3.5s steps(22, end), blink .75s step-end infinite;
 }
 
@@ -84,16 +131,17 @@ body {
     font-size: 1.5em;
     font-style: italic;
     color: #F5F1E3;
+    margin-top: 20px;
 }
 
 .buttons {
-    margin-top: 20px;
+    margin-top: 30px;
 }
 
 .btn {
     background-color: #1F2D3D;
     color: #F5F1E3;
-    padding: 12px 25px;
+    padding: 15px 25px;
     text-decoration: none;
     border-radius: 5px;
     margin: 0 10px;
@@ -108,15 +156,21 @@ body {
 
 /* About Section */
 .about-section {
-    padding: 80px 20px; 
+    padding: var(--section-padding);
+    max-width: var(--container-max-width);
+    margin: 40px auto;
     text-align: center;
     background-color: #F5F1E3;
+}
+
+.about-section h2 {
+    margin-bottom: 30px;
 }
 
 .about-section p {
     font-size: 1.2em; 
     line-height: 1.6;
-    color: #3D3D3D;
+    color: #1F2D3D;
     animation: fadeInUp 1s ease-out;
 }
 
@@ -131,12 +185,60 @@ body {
     }
 }
 
+/* Fun Facts and Quiz */
+.fun-facts-section {
+    padding: var(--section-padding);
+    margin-top: 20px;
+    background-color: #F5F1E3;
+    text-align: center;
+}
+
+.fun-facts-container {
+    background-color: #A0896C; 
+    color: #283a4e;
+    padding: 30px;
+    border-radius: 10px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    max-width: 600px; 
+    margin: 0 auto; 
+    text-align: center;
+}
+
+#fun-facts p {
+    font-size: 1.2em;
+    color: #1F2D3D;
+    margin-bottom: 40px; 
+}
+
+button {
+    background-color: #327562;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #024734;
+}
+
+button {
+    margin-top: 20px; 
+}
+
 /* Timeline Section */
+.timeline-section {
+    padding: var(--section-padding);
+    background-color: #F5F1E3;
+    text-align: center;
+}
+
 .timeline {
     position: relative;
     max-width: 600px;
-    margin: 0 auto;
-    padding: 40px 0;
+    margin: var(--section-margin);
 }
 
 .timeline-item {
@@ -176,27 +278,38 @@ body {
 }
 
 .timeline-item h3 {
-    margin: 0;
+    margin: 15px;
     padding: 5px 0;
     font-size: 1.5em;
     color: #1F2D3D;
-    margin: 15px;
 }
 
 .timeline-item p {
     text-align: center;
     font-size: 1em;
     color: #283a4e;
+    margin: 20px;
 }
 
 /* Skills Section */
-.skills {
-    margin-top: 50px;
-    margin-bottom: 70px;
+.skills-section {
+    padding: var(--section-padding);
+    background-color: #F5F1E3;
+    text-align: center;
 }
 
-.skill {
-    margin-bottom: 20px;
+.skills-section h2 {
+    margin-bottom: 50px;
+}
+
+.skills {
+
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.skill p {
+    color: #1F2D3D;
 }
 
 .progress {
@@ -214,58 +327,21 @@ body {
     color: #D4AF37;
     line-height: 25px;
     border-radius: 5px 0 0 5px;
-    width: 0; /* Start with width 0 for the animation */
-    transition: width 2s ease; /* Animation effect */
+    width: 0; 
+    transition: width 2s ease; 
 }
 
-/* Trigger the animation when the class 'animate' is added */
 .progress-bar.animate {
     width: var(--skill-level);
 }
 
-/* Fun Facts and Quiz */
-.fun-facts-container {
-    background-color: #A0896C; 
-    color: #283a4e;
-    padding: 20px; 
-    border-radius: 10px; 
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
-    max-width: 600px; 
-    margin: 40px auto; 
-    text-align: center;
-}
-
-#fun-facts p {
-    font-size: 1.2em;
-    color: #1F2D3D;
-    margin-bottom: 40px; 
-}
-
-button {
-    background-color: #327562;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-button:hover {
-    background-color: #024734;
-}
-
-button {
-    margin-top: 20px; 
-}
-
 /* Projects Section */
 .projects-section {
-    padding: 80px 20px;
-    background-color: #F5F1E3;
-    background: radial-gradient(circle, #94A6A1 10%, transparent 10%) repeat;
-    background-size: 30px 30px;
+    padding: var(--section-padding);
+    max-width: var(--container-max-width);
+    margin: var(--section-margin);
     text-align: center;
+    background-color: #F5F1E3;
 }
 
 .projects-grid {
@@ -305,13 +381,14 @@ button {
 
 /* Process Section */
 .process-section {
-    padding: 80px 20px;
+    padding: var(--section-padding);
+    max-width: var(--container-max-width);
+    margin: var(--section-margin);
     background-color: #F5F1E3;
     text-align: center;
 }
 
 .timeline-process {
-    margin: 20px;
     display: flex;
     flex-direction: column;
     gap: 30px;
@@ -329,14 +406,16 @@ button {
 .timeline-process .timeline-item img {
     max-width: 700px;
     max-height: 700px;
-    margin: 10px auto;
+    margin: 20px auto;
     border-radius: 8px;
 }
 
 /* Reflection Section */
 .reflection-section {
-    padding: 80px 20px;
-    background-color: #F5F1E3; 
+    padding: var(--section-padding);
+    max-width: var(--container-max-width);
+    margin: var(--section-margin);
+    background-color: #F5F1E3;
     text-align: center;
 }
 
@@ -370,7 +449,9 @@ button {
 
 /* Contact Section */
 .contact-section {
-    padding: 80px 20px;
+    padding: var(--section-padding);
+    max-width: var(--container-max-width);
+    margin: var(--section-margin);
     background-color: #F5F1E3;
     text-align: center;
 }
@@ -421,9 +502,9 @@ button {
 .modal-content {
     background-color: #A0896C;
     color: #1F2D3D;
-    padding: 20px;
+    padding: 40px;
     border-radius: 10px;
-    max-width: 600px;
+    max-width: 800px;
     width: 80%;
     margin: auto;
     text-align: center;

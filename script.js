@@ -3,7 +3,7 @@ const projectItems = document.querySelectorAll('.project-item');
 const projectModal = document.getElementById('projectModal');
 const modalTitle = document.getElementById('modal-title');
 const modalDescription = document.getElementById('modal-description');
-const modalImages = document.getElementById('modal-images');  // If you need to add images
+const modalImages = document.getElementById('modal-images');
 const closeProjectModal = document.querySelector('.close-project-modal');
 
 // Event listener for each project item to open modal
@@ -12,7 +12,7 @@ projectItems.forEach(item => {
         // Get title, description, and images from data attributes
         const title = item.getAttribute('data-title');
         const description = item.getAttribute('data-description');
-        const images = item.getAttribute('data-images').split(',');  // Split image list if needed
+        const images = item.getAttribute('data-images').split(',');
 
         // Set modal content
         modalTitle.textContent = title;
@@ -21,7 +21,7 @@ projectItems.forEach(item => {
         // Clear previous images
         modalImages.innerHTML = '';
 
-        // Add images if available
+        // Add images
         images.forEach(image => {
             const imgElement = document.createElement('img');
             imgElement.src = image;
