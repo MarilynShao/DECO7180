@@ -208,6 +208,7 @@ body {
     font-size: 1.2em;
     color: #1F2D3D;
     margin-bottom: 40px; 
+    animation: fadeInUp 1s ease-out;
 }
 
 button {

@@ -88,7 +88,6 @@ window.addEventListener('click', (e) => {
 // Fun facts and quiz logic
 const facts = [
     "I once tried coding on my phone... didn't go well.",
-    "I can write clean code but can't keep my desk clean!",
     "Coffee is my secret coding fuel.",
     "I once debugged for 4 hours only to realize it was a typo.",
 ];
