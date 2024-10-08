@@ -83,7 +83,7 @@ body {
 }
 
 .banner-content {
-    height: 1100px;
+    height: 800px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -120,7 +120,7 @@ body {
 
 @keyframes typing {
     from { width: 0; }
-    to { width: 22ch; }
+    to { width: 19ch; }
 }
 
 @keyframes blink {
