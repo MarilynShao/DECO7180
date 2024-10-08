@@ -13,8 +13,8 @@
         <a href="#about">About me</a>
         <a href="#projects">Projects</a>
         <a href="#process">Foodies milestones</a>
-        <a href="#reflection">Reflection</a>
-        <a href="#contact">Contact</a>
+        <a href="#reflection">Reflections</a>
+        <a href="#contact">Contact me</a>
     </div>
 
     <div id="home" class="banner-content">
@@ -26,7 +26,6 @@
     </div>
 
     <main>
-        <!-- **Background adjustment required** -->
         <section id="about" class="about-section">
             <h2>About me</h2>
             <p>Hi there! I'm Marilyn Shao, a passionate and dedicated developer with a background in property management and a deep love for technology. 
@@ -146,7 +145,6 @@
         <!-- Divider -->
         <div class="section-divider"></div>
 
-        <!-- **Adjust modal sizes to fit different screens, photos need to be interactive (open photos)** -->
         <section id="projects" class="projects-section">
             <h2>My Projects</h2>
             <div class="projects-grid">
@@ -188,7 +186,6 @@
         </div>
         </section>
 
-        <!-- **Adjust photos to add interactive elements** -->
         <section id="process" class="process-section">
             <h2>Foodies Milestones</h2>
             <div class="timeline-process">
@@ -222,7 +219,7 @@
                         <img src="Prototype_Image.png" alt="Prototype Image">
                         <p>This mid-fidelity prototype (see Image 7) represents the second stage of our design, incorporating feedback from early testing.</p>
                         <p>In addition, I developed the backend using PHP, integrating external APIs for both the Food Truck and Market data. I was responsible for building the core pages, 
-                            including the index, map, and details pages, which dynamically display real-time content fetched from the APIs.
+                            including the index(map), and details pages, which dynamically display real-time content fetched from the APIs.
                         </p>
                         <img src="key_contributions_2.png" alt="Prototype Image">
                         <p>This image (see Image 8) from my GitHub commit history showcases the early stages of development, where I implemented the backend and API fetching capabilities.</p>
@@ -242,9 +239,8 @@
             </div>
         </section>
 
-        <!-- **Adjust modal sizes, and photos to add interactive elements** -->
         <section id="reflection" class="reflection-section">
-            <h2>Reflection</h2> 
+            <h2>Reflections</h2> 
             <div class="reflection-timeline">
                 <div class="timeline-milestone" data-title="Early Challenges"
                     data-description="During the early stages of the project, we struggled to get everyone aligned, especially when it came to selecting a leader. 
@@ -290,6 +286,12 @@
                     <p id="modal-reflection-description">Reflection description goes here...</p>
                     <img id="modal-reflection-image" src="" alt="Reflection Image" style="max-width:100%; border-radius: 8px;">
                 </div>
+            </div>
+
+            <!-- Image Modal -->
+            <div id="imageModal" class="modal">
+                <span id="close-modal" class="close-modal">&times;</span>
+                <img id="modal-image" class="image-modal-content">
             </div>
         </section>
 

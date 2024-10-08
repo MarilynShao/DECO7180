@@ -11,7 +11,17 @@ body {
     margin: 0;
     padding: 0;
     background-color: #F5F1E3;
-    color: #3D3D3D;
+    color: #1F2D3D;
+}
+
+img {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
 
 /* For clickable titles */
@@ -498,6 +508,7 @@ button {
     justify-content: center;
     align-items: center;
     cursor: pointer;
+    overflow: auto;
 }
 
 .modal-content {
@@ -506,18 +517,43 @@ button {
     padding: 40px;
     border-radius: 10px;
     max-width: 800px;
+    max-height: 90vh;
     width: 80%;
+    overflow-y: auto;
     margin: auto;
     text-align: center;
     line-height: 2;
     position: relative;
 }
 
+.image-modal-content {
+    max-width: 90%;
+    max-height: 90%;
+    border-radius: 8px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    flex-direction: column;
+}
+
+.close-modal {
+    position: absolute;
+    top: 20px;
+    right: 40px;
+    font-size: 40px;
+    font-weight: bold;
+    color: #fff;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.close-modal:hover {
+    color: red;
+}
+
 .close-project-modal .close-reflection-modal {
     position: absolute;
-    top: 10px;
-    right: 20px;
-    font-size: 1.5em;
+    top: 20px;
+    right: 40px;
+    font-size: 40px;
     cursor: pointer;
     color: #333;
     transition: color 0.3s ease;
